@@ -7,11 +7,14 @@
           <h1><a href="">Django materials blog</a></h1>
         </div>
 
-        <div>
-          <p>published: 04.06.2018, 13:34</p>
-          <h2><a href="">My first post</a></h2>
-          <a>You can't stop the waves, but you can learn to surf.You can't stop the waves, but you can learn to surf.You can't stop the waves, but you can learn to surf.You can't stop the waves, but you can learn to surf.You can't stop the waves, but you can learn to surf.</a>
-        </div>
+        {% for post in posts %}
+          <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <a>{{ post.text|linebreaksbr }}</a>
+          </div>
+        {% endfor %}
+
         <div>
           <p>published: 05.06.2017, 13:34</p>
           <h2><a href="">My first post</a></h2>
